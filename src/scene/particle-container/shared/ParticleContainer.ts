@@ -1,12 +1,12 @@
 import { warn } from '../../../utils/logging/warn';
 import { Bounds } from '../../container/bounds/Bounds';
-import { ViewContainer } from '../../view/View';
+import { ViewContainer } from '../../view/ViewContainer';
 import { particleData } from './particleData';
 
 import type { Instruction } from '../../../rendering/renderers/shared/instructions/Instruction';
 import type { Shader } from '../../../rendering/renderers/shared/shader/Shader';
 import type { Texture } from '../../../rendering/renderers/shared/texture/Texture';
-import type { Container, ContainerChild, ContainerOptions } from '../../container/Container';
+import type { ContainerChild, ContainerOptions } from '../../container/Container';
 import type { DestroyOptions } from '../../container/destroyTypes';
 import type { IParticle } from './Particle';
 import type { ParticleRendererProperty } from './particleData';
@@ -264,7 +264,7 @@ export class ParticleContainer extends ViewContainer implements Instruction
     }
 
     /** @private */
-    public override updateBounds(): void { /* empty */ }
+    protected override updateBounds(): void { /* empty */ }
 
     /**
      * Destroys this sprite renderable and optionally its texture.
